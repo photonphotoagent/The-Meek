@@ -1,0 +1,7 @@
+{
+  "name": "The Meek's Retribution: 90s Horror Edition",
+  "description": "A cinematic storytelling tool that transforms your heartbreak into a cult-classic 90s horror film plot. Upload evidence of the 'wicked' to see them immortalized in a custom horror poster.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
