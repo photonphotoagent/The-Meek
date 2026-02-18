@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fcpxml>
+<!--
+    zoom-transition-template.fcpxml
+
+    An FCPXML template that demonstrates a modern zoom transition between
+    two clips using keyframed Transform parameters. Import this into
+    Final Cut Pro to use as a starting point for manual zoom transitions.
+
+    This is an alternative to the FxPlug plugin — useful when you want
+    a quick zoom effect without building/installing a native plugin.
+
+    Usage:
+    1. Open Final Cut Pro
+    2. File → Import → XML...
+    3. Select this file
+    4. The project "Zoom Transition Template" will appear in your library
+    5. Replace the placeholder clips with your footage
+    6. Adjust keyframes in the Video Inspector to taste
+
+    Compatible with: Final Cut Pro 10.6+ / FCPX 12
+-->
+<fcpxml version="1.11">
+    <resources>
+        <format id="r1" name="FFVideoFormat1080p2398"
+                frameDuration="1001/24000s"
+                width="1920" height="1080"
+                colorSpace="1-1-1 (Rec. 709)"/>
+
+        <!-- Placeholder effect for zoom blur (uses built-in Gaussian) -->
+        <effect id="r2" name="Gaussian" uid=".../Gaussian"/>
+    </resources>
+
+    <library>
+        <event name="Zoom Transition Templates">
+
+            <!--
+                TEMPLATE 1: Zoom Through Transition
+                Clip A zooms in rapidly, Clip B emerges zooming out.
+            -->
+            <project name="Zoom Through Transition" uid="ZoomThrough_Template_v1">
+                <sequence format="r1" duration="10010/24000s"
+                          tcStart="0s" tcFormat="NDF">
+                    <spine>
+                        <!-- CLIP A: Outgoing clip (replace with your footage) -->
+                        <gap name="Replace With Clip A"
+                             offset="0s" duration="5005/24000s" start="0s">
+
+                            <!-- Transform keyframes: zoom in from 100% to 800% -->
+                            <adjust-transform>
+                                <!-- At start of transition zone: normal -->
+                                <param name="scale">
+                                    <keyframe time="3003/24000s" value="1.0 1.0"
+                                              interp="smooth"/>
+                                    <!-- At midpoint: zoomed in 800% -->
+                                    <keyframe time="5005/24000s" value="8.0 8.0"
+                                              interp="smooth"/>
+                                </param>
+                                <param name="rotation">
+                                    <keyframe time="3003/24000s" value="0"
+                                              interp="smooth"/>
+                                    <keyframe time="5005/24000s" value="5"
+                                              interp="smooth"/>
+                                </param>
+                            </adjust-transform>
+
+                            <!-- Opacity fade out during zoom -->
+                            <adjust-opacity>
+                                <param name="opacity">
+                                    <keyframe time="3003/24000s" value="1.0"
+                                              interp="smooth"/>
+                                    <keyframe time="4504/24000s" value="0.0"
+                                              interp="smooth"/>
+                                </param>
+                            </adjust-opacity>
+                        </gap>
+
+                        <!-- CLIP B: Incoming clip (replace with your footage) -->
+                        <gap name="Replace With Clip B"
+                             offset="5005/24000s" duration="5005/24000s" start="0s">
+
+                            <!-- Transform keyframes: zoom out from 800% to 100% -->
+                            <adjust-transform>
+                                <param name="scale">
+                                    <!-- At transition start: zoomed in -->
+                                    <keyframe time="0s" value="8.0 8.0"
+                                              interp="smooth"/>
+                                    <!-- Settles to normal -->
+                                    <keyframe time="2002/24000s" value="1.0 1.0"
+                                              interp="smooth"/>
+                                </param>
+                                <param name="rotation">
+                                    <keyframe time="0s" value="-5"
+                                              interp="smooth"/>
+                                    <keyframe time="2002/24000s" value="0"
+                                              interp="smooth"/>
+                                </param>
+                            </adjust-transform>
+
+                            <!-- Opacity fade in -->
+                            <adjust-opacity>
+                                <param name="opacity">
+                                    <keyframe time="0s" value="0.0"
+                                              interp="smooth"/>
+                                    <keyframe time="1001/24000s" value="1.0"
+                                              interp="smooth"/>
+                                </param>
+                            </adjust-opacity>
+                        </gap>
+                    </spine>
+                </sequence>
+            </project>
+
+            <!--
+                TEMPLATE 2: Whip Zoom Transition
+                Fast, aggressive zoom with overlap.
+            -->
+            <project name="Whip Zoom Transition" uid="WhipZoom_Template_v1">
+                <sequence format="r1" duration="6006/24000s"
+                          tcStart="0s" tcFormat="NDF">
+                    <spine>
+                        <!-- CLIP A: Outgoing -->
+                        <gap name="Replace With Clip A"
+                             offset="0s" duration="4004/24000s" start="0s">
+
+                            <adjust-transform>
+                                <param name="scale">
+                                    <keyframe time="2002/24000s" value="1.0 1.0"
+                                              interp="smooth"/>
+                                    <keyframe time="4004/24000s" value="16.0 16.0"
+                                              interp="smooth"/>
+                                </param>
+                                <param name="position">
+                                    <keyframe time="2002/24000s" value="0 0"
+                                              interp="smooth"/>
+                                    <keyframe time="4004/24000s" value="200 0"
+                                              interp="smooth"/>
+                                </param>
+                            </adjust-transform>
+
+                            <adjust-opacity>
+                                <param name="opacity">
+                                    <keyframe time="2002/24000s" value="1.0"
+                                              interp="smooth"/>
+                                    <keyframe time="3003/24000s" value="0.0"
+                                              interp="smooth"/>
+                                </param>
+                            </adjust-opacity>
+                        </gap>
+
+                        <!-- CLIP B: Incoming -->
+                        <gap name="Replace With Clip B"
+                             offset="2002/24000s" duration="4004/24000s" start="0s">
+
+                            <adjust-transform>
+                                <param name="scale">
+                                    <keyframe time="0s" value="16.0 16.0"
+                                              interp="smooth"/>
+                                    <keyframe time="2002/24000s" value="1.0 1.0"
+                                              interp="smooth"/>
+                                </param>
+                                <param name="position">
+                                    <keyframe time="0s" value="-200 0"
+                                              interp="smooth"/>
+                                    <keyframe time="2002/24000s" value="0 0"
+                                              interp="smooth"/>
+                                </param>
+                            </adjust-transform>
+
+                            <adjust-opacity>
+                                <param name="opacity">
+                                    <keyframe time="0s" value="0.0"
+                                              interp="smooth"/>
+                                    <keyframe time="1001/24000s" value="1.0"
+                                              interp="smooth"/>
+                                </param>
+                            </adjust-opacity>
+                        </gap>
+                    </spine>
+                </sequence>
+            </project>
+
+        </event>
+    </library>
+</fcpxml>

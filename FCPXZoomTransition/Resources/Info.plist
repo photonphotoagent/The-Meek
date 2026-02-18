@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Bundle identity -->
+    <key>CFBundleIdentifier</key>
+    <string>com.themeek.fcpx.zoom-transition</string>
+
+    <key>CFBundleName</key>
+    <string>Modern Zoom Transition</string>
+
+    <key>CFBundleDisplayName</key>
+    <string>Modern Zoom</string>
+
+    <key>CFBundleShortVersionString</key>
+    <string>1.0.0</string>
+
+    <key>CFBundleVersion</key>
+    <string>1</string>
+
+    <key>CFBundlePackageType</key>
+    <string>BNDL</string>
+
+    <key>CFBundleSignature</key>
+    <string>????</string>
+
+    <key>CFBundleExecutable</key>
+    <string>$(EXECUTABLE_NAME)</string>
+
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+
+    <key>NSHumanReadableCopyright</key>
+    <string>Copyright © 2026 The Meek. All rights reserved.</string>
+
+    <!-- FxPlug 4 configuration -->
+    <key>NSPrincipalClass</key>
+    <string>ZoomTransitionPluginEntry</string>
+
+    <!-- FxPlug properties -->
+    <key>FxPlugVersion</key>
+    <integer>4</integer>
+
+    <key>FxPlugAPIVersion</key>
+    <string>4.0</string>
+
+    <key>ProPlugPlugInType</key>
+    <string>FxPlug</string>
+
+    <key>ProPlugPlugInTypeVersion</key>
+    <string>1.0</string>
+
+    <!-- Plugin groups (used by FCPX transitions browser) -->
+    <key>FxPlugGroups</key>
+    <array>
+        <dict>
+            <key>FxPlugGroupName</key>
+            <string>The Meek</string>
+            <key>FxPlugGroupEntries</key>
+            <array>
+                <dict>
+                    <key>FxPlugEntryUUID</key>
+                    <string>com.themeek.fcpx.zoom-transition</string>
+                    <key>FxPlugEntryName</key>
+                    <string>Modern Zoom</string>
+                    <key>FxPlugEntryType</key>
+                    <string>transition</string>
+                </dict>
+            </array>
+        </dict>
+    </array>
+
+    <!-- Supported platforms -->
+    <key>LSMinimumSystemVersion</key>
+    <string>14.0</string>
+
+    <!-- Deployment -->
+    <key>DTPlatformName</key>
+    <string>macosx</string>
+</dict>
+</plist>
