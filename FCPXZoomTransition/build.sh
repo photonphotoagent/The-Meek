@@ -71,6 +71,9 @@ build() {
         -module-name ZoomTransition \
         -emit-library \
         -o "$BUILD_DIR/$PLUGIN_NAME.$BUNDLE_EXT/Contents/MacOS/$PLUGIN_NAME" \
+        -Xcc -fmodule-map-file=Modules/module.modulemap \
+        -F /Library/Developer/SDKs/FxPlug.sdk/Library/Frameworks \
+        -F /Library/Developer/Frameworks \
         -framework FxPlug \
         -framework Metal \
         -framework CoreMedia \

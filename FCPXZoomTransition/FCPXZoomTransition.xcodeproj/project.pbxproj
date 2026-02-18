@@ -265,6 +265,11 @@
 				INFOPLIST_FILE = Resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Plug-Ins/FxPlug";
 				MARKETING_VERSION = 1.0.0;
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/Modules/module.modulemap",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.themeek.fcpx.zoom-transition";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = (
@@ -296,6 +301,11 @@
 				INFOPLIST_FILE = Resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Plug-Ins/FxPlug";
 				MARKETING_VERSION = 1.0.0;
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/Modules/module.modulemap",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.themeek.fcpx.zoom-transition";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = (
