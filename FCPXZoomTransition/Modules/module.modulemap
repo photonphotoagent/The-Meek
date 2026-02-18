@@ -1,0 +1,6 @@
+framework module FxPlug [system] {
+    umbrella header "FxPlugSDK.h"
+    link framework "FxPlug"
+    export *
+    module * { export * }
+}
