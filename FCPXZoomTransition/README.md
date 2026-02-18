@@ -40,7 +40,20 @@ FCPXZoomTransition/
 
 ## Quick Start
 
-### Option A: Build the native FxPlug plugin
+### Option A: Xcode (recommended)
+
+1. **Open the project**
+   ```
+   open FCPXZoomTransition.xcodeproj
+   ```
+2. **Build & install**: Press **Cmd+B**
+   - Compiles Swift sources + Metal shader
+   - A post-build script auto-copies the plugin to `~/Library/Plug-Ins/FxPlug/`
+3. **Run with FCP**: Press **Cmd+R**
+   - Builds, installs, and launches Final Cut Pro automatically
+4. The transition appears under **Transitions → The Meek → Modern Zoom**
+
+### Option B: Command line (no Xcode UI)
 
 ```bash
 cd FCPXZoomTransition
@@ -59,7 +72,7 @@ After installing, **restart Final Cut Pro**. The transition will appear under:
 
 > **Transitions → The Meek → Modern Zoom**
 
-### Option B: Import the FCPXML template (no build required)
+### Option C: Import the FCPXML template (no build required)
 
 If you don't want to compile anything, use the FCPXML template:
 
