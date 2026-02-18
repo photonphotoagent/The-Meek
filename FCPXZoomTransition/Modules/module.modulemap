@@ -2,5 +2,4 @@ module FxPlug [system] {
     header "/Library/Developer/SDKs/FxPlug.sdk/Library/Frameworks/FxPlug.framework/Versions/A/Headers/FxPlugSDK.h"
     link framework "FxPlug"
     export *
-    module * { export * }
 }
